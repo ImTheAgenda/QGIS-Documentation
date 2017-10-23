@@ -12,12 +12,11 @@ Raster Data
 Overview
 ========
 
-In the previous topics we have taken a closer look at vector data. While vector
+In the previous topics, we have taken a closer look at vector data. While vector
 features use geometry (points, polylines and polygons) to represent the real
 world, raster data takes a different approach. Rasters are made up of a matrix
 of pixels (also called cells), each containing a value that represents the
-conditions for the area covered by that cell (see figure_raster_). In this topic
-we are going to take a closer look at raster data, when it is useful and when it
+conditions of the area (see figure_raster_). This topic is concerned with raster data, when it is useful and when it
 makes more sense to use vector data.
 
 .. _figure_raster:
@@ -26,29 +25,27 @@ makes more sense to use vector data.
    :align: center
    :width: 30em
 
-   A raster dataset is composed of rows (running across) and columns (running
-   down) of pixels (also know as cells). Each pixel represents a geographical
-   region, and the value in that pixel represents some characteristic of that
+   A raster dataset is composed of rows (running horizontally) and columns (running
+   down) of pixels (also known as cells). Each pixel represents a geographical
+   region, and the value added to that pixel represents some characteristic of that
    region.
 
 Raster data in detail
 =====================
 
-Raster data is used in a GIS application when we want to display information that
-is continuous across an area and cannot easily be divided into vector features.
-When we introduced you to vector data we showed you the image in figure_landscape_.
-Point, polyline and polygon features work well for representing some features on
+Raster data is used in a GIS application to display continuous information across an area. Such continuous information cannot  be easily divided into vector features.
+In the introduction to vector data, you were shown the following image  figure_landscape_.
+Point, polyline and polygon features work well for depicting some features on
 this landscape, such as trees, roads and building footprints. Other features on
-a landscape can be more difficult to represent using vector features. For example
-the grasslands shown have many variations in colour and density of cover. It
-would be easy enough to make a single polygon around each grassland area, but a
+a landscape can be more difficult to represent by using vector features. For example,
+the grasslands shown vary in colour and density of cover. It
+would be too easy to put up a single polygon around each grassland area. By that, a
 lot of the information about the grassland would be lost in the process of
-simplifying the features to a single polygon. This is because when you give a
-vector feature attribute values, they apply to the whole feature, so vectors
-aren't very good at representing features that are not homogeneous (entirely the
-same) all over. Another approach you could take is to digitise every small
-variation of grass colour and cover as a separate polygon. The problem with that
-approach is that it will take a huge amount of work in order to create a good
+simplifying the features to a single polygon. When you give a
+vector feature attribute values, they apply to the whole feature. Consequently, vectors
+aren't suitable to present features that are not entirely homogeneous. Another approach you could take is to digitise every small
+variation of grass colour and mark and define it as a separate polygon. However, this
+approach will take a huge amount of work in order to create a good
 vector dataset.
 
 .. _figure_landscape:
@@ -58,22 +55,20 @@ vector dataset.
    :width: 30em
 
    Some features on a landscape are easy to represent as points, polylines and
-   polygons (e.g. trees, roads, houses). In other cases it can be difficult. For
-   example how would you represent the grasslands? As polygons? What about the
-   variations in colour you can see in the grass? When you are trying to represent
-   large areas with continuously changing values, raster data can be a better
-   choice.
+   polygons (e.g. trees, roads, houses). In other cases, it can be difficult e.g. would you represent grassland in the form of polygons or would you prefer to do it another way? What about the
+   variations in colour of the grass? 
+   Ultimately, when you are trying to represent
+   large areas with continuously changing values, raster data is the better
+   choice. 
 
-Using raster data is a solution to these problems. Many people use raster data as
-a **backdrop** to be used behind vector layers in order to provide more meaning
-to the vector information. The human eye is very good at interpreting images and
-so using an image behind vector layers, results in maps with a lot more meaning.
-Raster data is not only good for images that depict the real world surface (e.g.
-satellite images and aerial photographs), they are also good for representing more
-abstract ideas. For example, rasters can be used to show rainfall trends over an
-area, or to depict the fire risk on a landscape. In these kinds of applications,
-each cell in the raster represents a different value e.g. risk of fire on a scale
-of one to ten.
+Many people use raster data as the **foundation** for vector layers, especially to provide more meaning
+to the vector information. Since the human eye is very good at visual evaluation, using an image behind vector layers results in more meaningful maps. 
+Raster data is not only good for images showing the surface of the real world (e.g.
+satellite images and aerial photographs), but also good for representing more
+abstract ideas. For instance, rasters can be used to show rainfall trends concerning an
+area, or to outline risks of wildfires in a particularly endangered zone. In these kinds of applications,
+each cell in the raster represents a different value e.g. risks of wildfire on a scale
+from one to ten.
 
 An example that shows the difference between an image obtained from a satellite
 and one that shows calculated values can be seen in figure_raster_types_.
@@ -84,24 +79,22 @@ and one that shows calculated values can be seen in figure_raster_types_.
    :align: center
    :width: 30em
 
-   True colour raster images (left) are useful as they provide a lot of detail
-   that is hard to capture as vector features but easy to see when looking at the
-   raster image. Raster data can also be non-photographic data such as the raster
-   layer shown on the right which shows the calculated average minimum temperature
+   True colour raster images (left) are useful as they provide a lot of detail,
+   which is hard to capture in the form of vector features but easy to recognise when looking at the
+   raster image. Also, raster data can be non-photographic data such as the raster
+   layer shown on the right. In this case,  the raster data provides information about the approximately lowest temperature
    in the Western Cape for the month of March.
 
 Georeferencing
 ==============
 
-Georeferencing is the process of defining exactly where on the earth's surface
-an image or raster dataset was created. This positional information is stored
-with the digital version of the aerial photo. When the GIS application opens the
-photo, it uses the positional information to ensure that the photo appears in the
-correct place on the map. Normally this positional information consists of a
+Georeferencing is the process of geographically "pinpointing" an image or raster dataset on the earth's surface. This positional information is stored with the digital version of the aerial photo. When the GIS application opens the
+photo, it uses the geographical information to ensure the photo appears in the
+correct place on the map. Normally, this positional information consists of a
 coordinate for the top left pixel in the image, the size of each pixel in the X
 direction, the size of each pixel in the Y direction, and the amount (if any) by
 which the image is rotated. With these few pieces of information, the GIS
-application can ensure that raster data are displayed in the correct place. The
+application secures that raster data is displayed in the correct position on the map. The
 georeferencing information for a raster is often provided in a small text file
 accompanying the raster.
 
@@ -113,9 +106,7 @@ aerial photography and satellite imagery. In aerial photography, an aeroplane
 flies over an area with a camera mounted underneath it. The photographs are then
 imported into a computer and georeferenced. Satellite imagery is created when
 satellites orbiting the earth point special digital cameras towards the earth
-and then take an image of the area on earth they are passing over. Once the image
-has been taken it is sent back to earth using radio signals to special receiving
-stations such as the one shown in figure_csir_station_. The process of capturing raster data from
+and then take an image of this particular area. By using radio signals, the recently taken image is sent back to special receiving stations on earth (cf. figure_csir_station). The process of capturing raster data from
 an aeroplane or satellite is called **remote sensing**.
 
 .. _figure_csir_station:
